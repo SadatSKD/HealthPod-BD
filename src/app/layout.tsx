@@ -8,7 +8,11 @@ import '@fontsource/noto-sans-bengali/500.css';
 import '@fontsource/noto-sans-bengali/600.css';
 import './globals.css';
 
-const siteUrl = process.env.SITE_URL && /^https?:\/\//.test(process.env.SITE_URL) ? process.env.SITE_URL : 'http://localhost:3000';
+const siteUrl = process.env.SITE_URL && /^https?:\/\//.test(process.env.SITE_URL)
+  ? process.env.SITE_URL
+  : process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : 'http://localhost:3000';
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title:'HealthPod BD — Next Venture',
