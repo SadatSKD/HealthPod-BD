@@ -33,12 +33,23 @@ The chatbot delivers structured, educationally grounded legal analyses under Ban
   <img src="public/screenshots/chatbot-preview.png" alt="HealthPod BD Chatbot Desktop Preview" width="850" />
 </p>
 
-### 📱 Responsive Mobile Experience
-Designed mobile-first so judges and visitors can scan the physical X-banner QR code and immediately test the chatbot on their phones:
+### 📱 Responsive Mobile Experience & 🏁 Scannable QR Code
+Designed mobile-first so competition judges and booth visitors can scan the physical X-banner QR code and immediately test the live advisor directly on their smartphones:
 
-<p align="center">
-  <img src="public/screenshots/chatbot-mobile.png" alt="HealthPod BD Chatbot Mobile Preview" width="340" />
-</p>
+<table align="center" border="0">
+  <tr>
+    <td align="center" valign="middle">
+      <img src="public/screenshots/chatbot-mobile.png" alt="HealthPod BD Chatbot Mobile Preview" width="310" /><br><br>
+      <strong>📱 Mobile Advisor Interface</strong>
+    </td>
+    <td align="center" valign="middle" width="50">&nbsp;</td>
+    <td align="center" valign="middle">
+      <img src="public/brand/HealthPodBD_Scannable_QR.png" alt="HealthPod BD Scannable QR Code" width="280" /><br><br>
+      <strong>📲 Scan with your Phone Camera</strong><br>
+      <em>Official Competition X-Banner QR Code</em>
+    </td>
+  </tr>
+</table>
 
 ---
 
