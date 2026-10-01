@@ -140,11 +140,7 @@ npm install
 
 ### 3. Configure environment variables
 Create a `.env` file in the root directory:
-```dotenv
-GEMINI_API_KEY="AIzaSyYourActualKeyHere"
-GEMINI_MODEL="gemini-3.5-flash-lite"
-TRUST_PROXY_HEADERS="false"
-RATE_LIMIT_SECRET="healthpod_local_secret"
+```
 ```
 *(See `.env.example` for additional optional configurations including MongoDB and YouTube embed links).*
 
