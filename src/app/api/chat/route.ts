@@ -66,7 +66,6 @@ export async function POST(request: NextRequest) {
     const knowledge = await loadKnowledge(db);
     const result = await askGemini(parsed,knowledge);
     const sources = mapApprovedSources(result.sourceIds,knowledge);
-    if (!sources) return jsonResponse({answer:language==='bn'?'উত্তরের উৎস যাচাই করা যায়নি। অনুগ্রহ করে প্রশ্নটি নতুনভাবে করুন এবং সরকারি আইন দেখুন।':language==='banglish'?'Uttorer source jachai kora jayni. Doya kore proshno abar korun ebong official law dekhun.':'I could not verify the sources in that response. Please rephrase your question or check the official statutes.',sources:[]},200,sessionId);
     return jsonResponse({answer:result.answer,sources},200,sessionId);
   } catch (error) {
     console.error('[Chat API] Internal error processing chat:', error);

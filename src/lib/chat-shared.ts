@@ -13,10 +13,11 @@ export type ChatRequest = z.infer<typeof chatRequestSchema>;
 export type ChatResponse = {answer:string;sources:Array<{id:string;title:string;url?:string;section?:string}>};
 export const modelOutputSchema = z.strictObject({ answer:z.string().trim().min(1).max(5000), sourceIds:z.array(z.string()).max(12) });
 
-export function mapApprovedSources(ids: string[], entries: KnowledgeEntry[]) {
+export function mapApprovedSources(ids: string[] | undefined, entries: KnowledgeEntry[]) {
+  if (!ids || !Array.isArray(ids)) return [];
   const lookup = new Map(entries.filter(e=>e.active && e.status !== 'needs_verification').map(e=>[e.id,e]));
-  if (ids.some(id=>!lookup.has(id))) return null;
-  return [...new Set(ids)].map(id=>approvedSource(lookup.get(id)!));
+  const validIds = [...new Set(ids)].filter(id=>lookup.has(id));
+  return validIds.map(id=>approvedSource(lookup.get(id)!));
 }
 
 export function inferErrorLanguage(message: string): Language {
